@@ -4,29 +4,14 @@ require 'uri'
 require 'multi_json'
 
 module Alertlogic
-  class << self
-    def mock!
-      puts 'Mocking Alertlogic API calls...'
-      @mocking = true
-    end
-
-    def unmock!
-      puts 'Un-mocking Alertlogic API calls...'
-      @mocking = false
-    end
-
-    def mocking?
-      @mocking = ALERTLOGIC_CONFIG['mock'] if @mocking.nil?
-      @mocking
-    end
-  end
 
   # Generic API class for Alertlogic, inherit from this class
   # to create API classes for different services
   class API
 
-    def initialize(defaults={})
+    def initialize(options={}, defaults={})
       @defaults = defaults
+      @options = options
     end
 
     def get(path, params={})
@@ -115,14 +100,14 @@ module Alertlogic
     def add_required_headers(request)
       request['Content-Type'] = 'application/json'
       request['Accept'] = 'application/json'
-      request['X-Client-Cert-Dn'] = ALERTLOGIC_CONFIG[:client_certificate_dn]
+      request['X-Client-Cert-Dn'] = @options[:client_certificate_dn]
       request
     end
 
     def http_connection
-      http = Net::HTTP.new(ALERTLOGIC_CONFIG[:base_url], ALERTLOGIC_CONFIG[:port])
+      http = Net::HTTP.new(@options[:base_url], @options[:port])
 
-      if ALERTLOGIC_CONFIG[:scheme] == 'https' # enable SSL/TLS
+      if @options[:scheme] == 'https' # enable SSL/TLS
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
@@ -180,5 +165,5 @@ module Alertlogic
   end
 
   class UnknownError < Alertlogic::Exception
-    end
+  end
 end
