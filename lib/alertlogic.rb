@@ -1,7 +1,8 @@
-require "alertlogic/version"
 require 'net/https'
 require 'uri'
 require 'multi_json'
+require 'alertlogic/version'
+require 'alertlogic/order_api'
 
 module Alertlogic
 

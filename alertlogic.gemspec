@@ -10,7 +10,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["atistler@datapipe.com"]
   gem.description   = %q{Alertlogic API}
   gem.summary       = %q{Alertlogic API}
-  gem.homepage      = "none"
+  gem.homepage      = ""
 
   gem.files         = Dir['lib/*.rb'] + Dir['lib/**/*.rb']
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
