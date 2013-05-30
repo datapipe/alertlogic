@@ -1,3 +1,5 @@
+require 'alertlogic/base_api'
+
 module Alertlogic
   class OrderApi < Alertlogic::BaseApi
     def find(id)
