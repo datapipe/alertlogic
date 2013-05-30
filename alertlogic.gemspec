@@ -12,7 +12,8 @@ Gem::Specification.new do |gem|
   gem.summary       = %q{Alertlogic API}
   gem.homepage      = ""
 
-  gem.files         = Dir['lib/**/*.rb']
+  gem.platform      = Gem::Platform::RUBY
+  gem.files         = `git ls-files`.split("\n")
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]

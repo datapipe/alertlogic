@@ -1,8 +1,3 @@
-require 'net/https'
-require 'uri'
-require 'multi_json'
-require 'alertlogic/exception'
-
 module Alertlogic
 
   # Generic API class for Alertlogic, inherit from this class
