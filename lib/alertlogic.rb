@@ -1,3 +1,3 @@
 require 'alertlogic/version'
-require 'alertlogic/api'
+require 'alertlogic/base_api'
 require 'alertlogic/order_api'

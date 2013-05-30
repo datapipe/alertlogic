@@ -1,5 +1,7 @@
+require 'base_api'
+
 module Alertlogic
-  class OrderAPI < Alertlogic::API
+  class OrderApi < Alertlogic::BaseApi
     def find(id)
       get("/api/order/v2/#{id}")
     end
