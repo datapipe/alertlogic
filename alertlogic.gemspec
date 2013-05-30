@@ -10,9 +10,9 @@ Gem::Specification.new do |gem|
   gem.email         = ["atistler@datapipe.com"]
   gem.description   = %q{Alertlogic API}
   gem.summary       = %q{Alertlogic API}
-  gem.homepage      = ""
+  gem.homepage      = "none"
 
-  gem.files         = `git ls-files`.split($/)
+  gem.files         = FileList['lib/**/*.rb', 'lib/alertlogic.rb'].to_a
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
