@@ -1,4 +1,4 @@
-module Alertlogic
+module AlertlogicTmc
   class Exception < ::StandardError
     attr_accessor :status
     attr_accessor :error

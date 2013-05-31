@@ -1,4 +1,4 @@
-module Alertlogic
+module AlertlogicTmc
 
   # Generic API class for Alertlogic, inherit from this class
   # to create API classes for different services

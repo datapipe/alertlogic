@@ -1,15 +1,15 @@
 # -*- encoding: utf-8 -*-
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'alertlogic/version'
+require 'alertlogic_tmc/version'
 
 Gem::Specification.new do |gem|
-  gem.name          = "alertlogic"
-  gem.version       = Alertlogic::VERSION
+  gem.name          = "alertlogic_tmc"
+  gem.version       = AlertlogicTmc::VERSION
   gem.authors       = ["atistler"]
   gem.email         = ["atistler@datapipe.com"]
-  gem.description   = %q{Alertlogic API}
-  gem.summary       = %q{Alertlogic API}
+  gem.description   = %q{AlertlogicTmc API}
+  gem.summary       = %q{AlertlogicTmc API}
   gem.homepage      = ""
 
   gem.platform      = Gem::Platform::RUBY
