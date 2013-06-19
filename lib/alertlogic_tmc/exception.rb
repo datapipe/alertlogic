@@ -18,36 +18,36 @@ module AlertlogicTmc
 
   end
 
-  class ServerError < Alertlogic::Exception
+  class ServerError < AlertlogicTmc::Exception
   end
 
-  class Forbidden < Alertlogic::Exception
+  class Forbidden < AlertlogicTmc::Exception
   end
 
-  class Forbidden < Alertlogic::Exception
+  class Forbidden < AlertlogicTmc::Exception
   end
 
-  class Conflict < Alertlogic::Exception
+  class Conflict < AlertlogicTmc::Exception
   end
 
-  class NotAcceptable < Alertlogic::Exception
+  class NotAcceptable < AlertlogicTmc::Exception
   end
 
-  class UnprocessableEntity < Alertlogic::Exception
+  class UnprocessableEntity < AlertlogicTmc::Exception
   end
 
-  class NotFound < Alertlogic::Exception
+  class NotFound < AlertlogicTmc::Exception
   end
 
-  class ConnectionException < Alertlogic::Exception
+  class ConnectionException < AlertlogicTmc::Exception
   end
 
-  class Unauthorized < Alertlogic::Exception
+  class Unauthorized < AlertlogicTmc::Exception
   end
 
-  class BadRequest < Alertlogic::Exception
+  class BadRequest < AlertlogicTmc::Exception
   end
 
-  class UnknownError < Alertlogic::Exception
+  class UnknownError < AlertlogicTmc::Exception
   end
 end
