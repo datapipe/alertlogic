@@ -3,7 +3,7 @@ module AlertlogicTmc
     attr_accessor :status
     attr_accessor :error
 
-    def initialize(status, error)
+    def initialize(status, error = nil)
       self.status = status
       self.error = error
     end
