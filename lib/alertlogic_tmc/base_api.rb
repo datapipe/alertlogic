@@ -105,6 +105,9 @@ module AlertlogicTmc
       if @options[:scheme] == 'https' # enable SSL/TLS
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+        pem = File.read(@options[:ca_file])
+        http.cert = OpenSSL::X509::Certificate.new(pem)
+        http.key = OpenSSL::PKey::RSA.new(pem)
       end
       http
     end
