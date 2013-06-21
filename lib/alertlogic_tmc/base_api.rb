@@ -71,23 +71,23 @@ module AlertlogicTmc
     def handle_error(status, response)
       case status
         when '500'
-          raise AlertlogicTmc::ServerError.new(500, response)
+          raise AlertlogicTmc::ServerError.new(500, response['error'])
         when '401'
-          raise AlertlogicTmc::Unauthorized.new(401, response)
+          raise AlertlogicTmc::Unauthorized.new(401, response['error'])
         when '403'
-          raise AlertlogicTmc::Forbidden.new(403, response)
+          raise AlertlogicTmc::Forbidden.new(403, response['error'])
         when '406'
-          raise AlertlogicTmc::NotAcceptable.new(406, response)
+          raise AlertlogicTmc::NotAcceptable.new(406, response['error'])
         when '409'
-          raise AlertlogicTmc::Conflict.new(406, response)
+          raise AlertlogicTmc::Conflict.new(406, response['error'])
         when '422'
-          raise AlertlogicTmc::UnprocessableEntity.new(422, response)
+          raise AlertlogicTmc::UnprocessableEntity.new(422, response['error'])
         when '404'
-          raise AlertlogicTmc::NotFound.new(404, response)
+          raise AlertlogicTmc::NotFound.new(404, response['error'])
         when '400'
-          raise AlertlogicTmc::BadRequest.new(400, response)
+          raise AlertlogicTmc::BadRequest.new(400, response['error'])
         else
-          raise AlertlogicTmc::UnknownError.new(status.to_i, response)
+          raise AlertlogicTmc::UnknownError.new(status.to_i, response['error'])
       end
     end
 
