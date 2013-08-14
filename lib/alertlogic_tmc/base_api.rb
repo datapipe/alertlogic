@@ -105,5 +105,10 @@ module AlertlogicTmc
       http
     end
 
+    def add_required_headers(request)
+      request.basic_auth self.options[:username], self.options[:password]
+      request
+    end
+
   end
 end

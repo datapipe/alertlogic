@@ -14,11 +14,6 @@ module AlertlogicTmc
       post("/api/tm/v1/appliances/#{id}", options)
     end
 
-    protected
 
-    def add_required_headers(request)
-      puts self.options[:username]
-      request.basic_auth self.options[:username], self.options[:password]
-    end
   end
 end
