@@ -96,7 +96,7 @@ module AlertlogicTmc
     protected
 
     def http_connection
-      http = Net::HTTP.new(@options[:public_base_url], @options[:port])
+      http = Net::HTTP.new(@options[:public_api_host], @options[:port])
 
       if @options[:scheme] == 'https' # enable SSL/TLS
         http.use_ssl = true
