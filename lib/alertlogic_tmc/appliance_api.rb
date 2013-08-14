@@ -13,7 +13,5 @@ module AlertlogicTmc
     def update(options={})
       post("/api/tm/v1/appliances/#{id}", options)
     end
-
-
   end
 end
