@@ -4,6 +4,8 @@ module AlertlogicTmc
   # to create API classes for different services
   class BaseApi
 
+    attr_accessor :options, :defaults
+
     def initialize(options={}, defaults={})
       @defaults = defaults
       @options = options
@@ -91,25 +93,17 @@ module AlertlogicTmc
       end
     end
 
-    private
-    def add_required_headers(request)
-      request['Content-Type'] = 'application/json'
-      request['Accept'] = 'application/json'
-      request['X-Client-Cert-Dn'] = @options[:client_certificate_dn]
-      request
-    end
+    protected
 
     def http_connection
-      http = Net::HTTP.new(@options[:base_url], @options[:port])
+      http = Net::HTTP.new(@options[:public_base_url], @options[:port])
 
       if @options[:scheme] == 'https' # enable SSL/TLS
         http.use_ssl = true
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-        pem = File.read(@options[:ca_file])
-        http.cert = OpenSSL::X509::Certificate.new(pem)
-        http.key = OpenSSL::PKey::RSA.new(pem)
       end
       http
     end
+
   end
 end
