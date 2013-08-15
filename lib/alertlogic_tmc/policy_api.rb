@@ -6,8 +6,8 @@ module AlertlogicTmc
       get("/api/tm/v1/policies/#{id}")
     end
 
-    def list
-      get("/api/tm/v1/policies")
+    def list(options = {})
+      get("/api/tm/v1/policies", options)
     end
 
     def create(options={})

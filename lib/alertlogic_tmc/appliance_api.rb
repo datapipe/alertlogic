@@ -6,8 +6,8 @@ module AlertlogicTmc
       get("/api/tm/v1/appliances/#{id}")
     end
 
-    def list
-      get("/api/tm/v1/appliances")
+    def list(options={})
+      get("/api/tm/v1/appliances", options)
     end
 
     def update(id, options={})

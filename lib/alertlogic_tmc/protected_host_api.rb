@@ -6,8 +6,8 @@ module AlertlogicTmc
       get("/api/tm/v1/protectedhosts/#{id}")
     end
 
-    def list
-      get("/api/tm/v1/protectedhosts")
+    def list(options={})
+      get("/api/tm/v1/protectedhosts", options)
     end
 
     def update(id, options={})
