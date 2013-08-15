@@ -106,6 +106,8 @@ module AlertlogicTmc
     end
 
     def add_required_headers(request)
+      request['Content-Type'] = 'application/json'
+      request['Accept'] = 'application/json'
       request.basic_auth self.options[:username], self.options[:password]
       request
     end
