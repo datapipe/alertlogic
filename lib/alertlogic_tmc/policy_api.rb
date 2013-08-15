@@ -14,7 +14,7 @@ module AlertlogicTmc
       post("/api/tm/v1/policies", options)
     end
 
-    def update(options={})
+    def update(id, options={})
       post("/api/tm/v1/policies/#{id}", options)
     end
 

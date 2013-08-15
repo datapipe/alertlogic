@@ -10,7 +10,7 @@ module AlertlogicTmc
       get("/api/tm/v1/appliances")
     end
 
-    def update(options={})
+    def update(id, options={})
       post("/api/tm/v1/appliances/#{id}", options)
     end
   end

@@ -10,7 +10,7 @@ module AlertlogicTmc
       get("/api/tm/v1/protectedhosts")
     end
 
-    def update(options={})
+    def update(id, options={})
       post("/api/tm/v1/protectedhosts/#{id}", options)
     end
 
