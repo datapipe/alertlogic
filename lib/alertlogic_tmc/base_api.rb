@@ -14,8 +14,9 @@ module AlertlogicTmc
     def get(path, params={})
       params = @defaults.merge(params)
 
+      path += '?' + params.map{|k,v| "#{CGI.escape(k.to_s)}=#{CGI.escape(v.to_s)}"}.join('&') if params
+
       request = Net::HTTP::Get.new(path)
-      request.params = params.map{|k,v| "#{CGI.escape(k)}=#{CGI.escape(v)}"}.join('&')
 
       response = http_connection.start { |h| h.request(add_required_headers(request)) }
 
