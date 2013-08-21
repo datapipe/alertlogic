@@ -1,5 +1,6 @@
 require 'net/https'
 require 'uri'
+require 'cgi'
 require 'multi_json'
 
 require 'alertlogic_tmc/version'
