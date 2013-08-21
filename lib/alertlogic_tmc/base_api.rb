@@ -15,7 +15,7 @@ module AlertlogicTmc
       params = @defaults.merge(params)
 
       request = Net::HTTP::Get.new(path)
-      request.params = URI.encode_www_form(params)
+      request.params = params.map{|k,v| "#{CGI.escape(k)}=#{CGI.escape(v)}"}.join('&')
 
       response = http_connection.start { |h| h.request(add_required_headers(request)) }
 
