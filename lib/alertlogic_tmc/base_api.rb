@@ -15,7 +15,7 @@ module AlertlogicTmc
       params = @defaults.merge(params)
 
       request = Net::HTTP::Get.new(path)
-      request.body = MultiJson.encode(params)
+      request.params = URI.encode_www_form(params)
 
       response = http_connection.start { |h| h.request(add_required_headers(request)) }
 
@@ -48,7 +48,6 @@ module AlertlogicTmc
       params = @defaults.merge(params)
 
       request = Net::HTTP::Delete.new(path)
-      request.body = MultiJson.encode(params)
 
       response = http_connection.start { |h| h.request(add_required_headers(request)) }
 
