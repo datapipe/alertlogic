@@ -10,4 +10,5 @@ require 'alertlogic_tmc/order_api'
 require 'alertlogic_tmc/appliance_api'
 require 'alertlogic_tmc/policy_api'
 require 'alertlogic_tmc/protected_host_api'
+require 'alertlogic_tmc/user_api'
 
